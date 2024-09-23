@@ -1,0 +1,87 @@
+
+body {
+    margin: 0;
+    padding: 0;
+}
+   
+.wrapper {
+    margin: 0;
+    display: grid;
+    position: relative;
+    justify-items: center;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 3rem 15rem 10rem 10rem 15rem;
+    grid-template-areas: 
+    "header header header header header header"
+    "main main main main aside aside"
+    "sect-a sect-a sect-a sect-b sect-b sect-b"
+    "sect-c sect-c sect-c sect-d sect-d sect-d"
+    "footer footer footer footer footer footer";
+    gap: 2rem;
+    background-color: lightgray;
+}
+  
+header {grid-area: header;}
+main {grid-area: main;}
+aside {grid-area: aside;}
+.sect-a {grid-area: sect-a;}
+.sect-b {grid-area: sect-b;}
+.sect-c {grid-area: sect-c;}
+.sect-d {grid-area: sect-d;}
+footer {grid-area: footer;}
+
+
+
+
+header, footer {
+    width: 100%;
+}
+  
+
+
+.homeSidebar { 
+    border: 1px solid black;
+    border-radius: 1rem;
+    position: absolute;
+    height: 100%;
+    width: 90%;
+    padding-left: 1.5rem;
+    margin-right: 2rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+  
+.homeSidebar li {
+    list-style: none;
+}
+  
+
+
+.sect-a, .sect-b, .sect-c, .sect-d {
+    width: 100%;
+    text-align: center;
+    background-color: #007bff;
+    border: 1px solid darkslategray;
+    border-radius: 66px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+} 
+  
+
+@media (max-width: 480px) {
+    aside {display: none;}
+    
+    .wrapper {
+        margin: 0;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 7rem 15rem 10rem 10rem 10rem 15rem;
+        grid-template-areas: 
+        "header header"
+        "main main"
+        "aside aside"
+        "sect-a sect-b"
+        "sect-c sect-d"
+        "footer footer"
+        ;   
+    }
+}
